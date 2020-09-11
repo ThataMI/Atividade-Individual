@@ -6,19 +6,19 @@ public class Porteiro extends Funcionario {
 
     public Porteiro( String nome,String re, Double salario) {
         super(re, nome);
-        this.salario = salario;
+        this.salario = 0.0;
     }
 
+    public Double getSalario() {
+        return salario;
+    }
+
+    
     @Override
     public Double calcSalario() {
         return salario;
     }
 
 
-    @Override
-    public String toString() {
-        return "Funcionario{" +
-                "salario=" + salario +
-                '}' + super.toString();
-    }
+   
 }

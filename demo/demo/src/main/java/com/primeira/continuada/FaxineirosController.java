@@ -13,17 +13,18 @@ public class FaxineirosController {
 
     List<Faxineiro> listaFaxineiro = new ArrayList<>();
 
+
     @GetMapping
-    public ResponseEntity listarFaxineiro() {
+    public ResponseEntity listarFaxineiros() {
         if (listaFaxineiro.isEmpty()) {
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.ok(listaFaxineiro);
-
         }
     }
+    
 
-    @PostMapping("/faxineiros")
+    @PostMapping
     public ResponseEntity cadastrarPorteiro(@RequestBody Faxineiro faxineiro) {
         listaFaxineiro.add(faxineiro);
         return ResponseEntity.status(HttpStatus.CREATED).build();

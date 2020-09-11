@@ -20,11 +20,5 @@ public abstract class Funcionario {
         return nome;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "re='" + re + '\'' +
-                ", nome='" + nome + '\'' +
-                '}';
-    }
+   
 }

@@ -12,18 +12,17 @@ import java.util.List;
 public class PorteirosController {
 
     List<Porteiro> listaPorteiro = new ArrayList<>();
-
-    @GetMapping
-    public ResponseEntity listarPorteiro() {
+    
+   @GetMapping
+    public ResponseEntity listarPorteiros() {
         if (listaPorteiro.isEmpty()) {
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.ok(listaPorteiro);
-
         }
     }
 
-    @PostMapping("/porteiros")
+    @PostMapping
     public ResponseEntity cadastrarPorteiro(@RequestBody Porteiro porteiro) {
         listaPorteiro.add(porteiro);
         return ResponseEntity.status(HttpStatus.CREATED).build();
